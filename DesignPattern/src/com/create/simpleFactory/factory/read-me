@@ -1,0 +1,11 @@
+unreflection
+如果有新需求，
+1 创建新需求类NewType（实现相应的接口Type）
+2 创建新的简单工厂类（该简单工厂类继承原来的简单工厂类）
+3 在新疆的简单工厂类中重写相应的方法，如下
+	@Override
+	public Type getInstance(int type)
+	{
+		if( type == 3) return new NewType();
+		else return super.getInstance(type);
+	}
